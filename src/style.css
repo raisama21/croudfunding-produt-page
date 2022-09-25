@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply py-5 px-10;
+  }
+
+  .btn-secondary {
+    @apply py-4 px-8;
+  }
+
+  .btn-clr1 {
+    @apply bg-pc2 rounded-full text-white font-semibold hover:bg-pc1;
+  }
+
+  .btn-clr2 {
+    @apply bg-nc1/60 rounded-full text-white font-semibold;
+  }
+
+  .card {
+    @apply mb-9 py-7 px-6 border-2 border-nc1/40 rounded-lg;
+  }
+
+  .card-h {
+    @apply grid py-8 border-2 border-nc1/50 rounded-lg  lg:grid-cols-[69%,31%];
+  }
+}
+
+@layer utilities {
+  .transition {
+    @apply transition-colors ease-in duration-200;
+  }
+}
+
+@layer base {
+  p {
+    @apply text-nc1 font-normal text-base lg:text-lg;
+  }
+}
+
+header {
+  background-image: url("/public/images/image-hero-mobile.jpg");
+}
+
+@media all and (min-width: 40em) {
+  header {
+    background-image: url("/public/images/image-hero-desktop.jpg");
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.menu {
+  cursor: pointer;
+}
+
+.hamburger-top,
+.hamburger,
+.hamburger-bottom {
+  height: 3px;
+  width: 20px;
+  background-color: hsl(0, 0%, 100%);
+  transition: 500ms ease-in-out;
+}
+
+.hamburger {
+  margin-block: 4px;
+}
+
+.open .hamburger-top {
+  opacity: 0;
+}
+
+.open .hamburger {
+  transform: rotate(45deg) translate(1px, 2px);
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translate(3px, -4px);
+}
+
+.hide {
+  display: none;
+}
